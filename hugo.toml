@@ -21,6 +21,14 @@ ShowCodeCopyButtons = true
 ShowBreadCrumbs = true
 ShowRssButtonInSectionTermList = true
 ShowReadingTime = true
+assets.disableHLJS = true
+
+[markup.highlight]
+anchorLineNos = true
+codeFences = true
+style = "monokai"
+wrapperClass = "highlight"
+noClasses = true
 
 [params.profileMode]
 enabled = true
@@ -40,6 +48,10 @@ url = 'https://linkedin.com/in/sukruerengokirmak'
 [[params.socialIcons]]
 name = 'orcid'
 url = 'https://orcid.org/0009-0003-2128-7872'
+
+[[params.socialIcons]]
+name = 'researchgate'
+url = 'https://www.researchgate.net/profile/Suekrue-Goekirmak'
 
 [[params.socialIcons]]
 name = 'email'

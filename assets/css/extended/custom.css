@@ -2,3 +2,7 @@
 .archive-count {
     display: none;
 }
+
+.chroma {
+  background-color: unset;
+}

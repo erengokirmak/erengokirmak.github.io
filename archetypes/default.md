@@ -4,6 +4,7 @@ draft = true
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 description = ""
 tags = []
+showToc = false
 
 [cover]
 image = ""
