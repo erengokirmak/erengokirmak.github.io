@@ -3,7 +3,7 @@ date = '2026-02-27T14:49:04+03:00'
 draft = false 
 title = "uv: python management"
 description = "Ramblings about my new love for Python project management"
-tags = ["programming"]
+tags = ["programming", "tools" ]
 showToc = false
 
 [cover]
@@ -13,7 +13,7 @@ caption = "Optional caption text"
 relative = false
 hidden = false
 +++
-I use Python a lot. In the (hopefully) final semester of my Bachelor's, almost all my courses involve using Python at some point or another. I'm doing my senior project mainly in Python, I have an ML course where most assignments require[^1] Python, I'm doing research with LLMs so that also devolves into[^1] Python. In all this mess, I'm dealing with Python and Python packages. First, I will tell you the way I started to deal with these, and then I will introduce my current method.
+I use Python a lot. In the (hopefully) final semester of my Bachelor's, almost all my courses involve using Python at some point or another. I'm doing my senior project mainly in Python, I have an ML course where most assignments require[^1] Python, I'm doing research with LLMs so that also devolves into Python. In all this mess, I'm dealing with Python and Python packages. First, I will tell you the way I started to deal with these, and then I will introduce my current method.
 
 ## My old solution
 I started with the path of least resistance: Create a `requirements.txt` file in the project and create a virtual environment using `python -m venv .venv`. When a package is needed, just `pip install` that package! This is very much fine...for the first commit of the project. Starting from there, the `reqiurements.txt` file becomes increasingly brittle. Any time you say to yourself:
@@ -26,9 +26,7 @@ And introduce another dependency, you *must* not forget to update the requiremen
 pip freeze | grep the-package-you-added
 ```
 
-H~~2~~o
-
-Followed by adding this to the `requirements.txt`. Is this okay? Sure. However, you again relied on your own vigilance to catch that you forgot to add a dependency. This problem goes on for a while. Additionally, when creating a virtual environment, you are bound to the Python versions you have installed in your device. If you want to have a Python 3.11 environment but have Python 3.14 installed, you will have to do some workarounds. Recently, and finally, this was my breaking point. I knew from a previous course that `uv` existed. I just had not tried to use it outside that course's context. So, I dived in:
+Followed by adding this to the `requirements.txt`. Is this an okay approach? Sure. However, you again relied on your own vigilance to catch that you forgot to add a dependency. This problem goes on for a while. Additionally, when creating a virtual environment, you are bound to the Python versions you have installed in your device. If you want to have a Python 3.11 environment but have Python 3.14 installed, you will have to do some workarounds. Recently, and finally, this was my breaking point. I knew from a previous course that `uv` existed. I just had not tried to use it outside that course's context. So, I dived in:
 
 ## `uv`
 [uv](https://docs.astral.sh/uv/) is a package and **project** manager for Python. The important word there is "project." After trying it out, I realized more clearly what I was missing with the `venv+pip` method: I didn't have a project manager at all, *I* was the project manager. Sure, there was a list of what was needed for the project to run, but that was a manual and brittle process. In contrast, `uv` does things in a more programmatic way. Let's say you want to create a Python project that uses Python 3.11.x. You use:

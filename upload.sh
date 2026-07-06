@@ -15,7 +15,7 @@ rm -rf public/* || {
 }
 
 # Recompile the website
-hugo --minify --ignoreCache --panicOnWarning --logLevel=info --gc || {
+hugo --minify --ignoreCache --gc || {
   echo "[ERROR]: Recompilation failed"
   exit
 }

@@ -1,6 +1,6 @@
 baseURL = 'https://erengokirmak.com/'
-languageCode = 'en-us'
-title = 'Şükrü Eren Gökırmak'
+locale = 'en-us'
+title = '''Şükrü Eren Gökırmak'''
 theme = 'PaperMod'
 copyright = "şükrü eren gökırmak · [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
 outputs = { home = ["HTML", "JSON"] }
@@ -60,6 +60,10 @@ url = 'mailto:sukruerengokirmak@gmail.com'
 [[params.socialIcons]]
 name = 'cv'
 url = '/Sukru_Eren_Gokirmak_CV.pdf'
+
+[[params.socialIcons]]
+name = 'pgpkey'
+url = '/pub.asc'
 
 
 [[menu.main]]
