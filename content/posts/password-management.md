@@ -1,6 +1,6 @@
 +++
 date = '2026-07-06T15:02:07+03:00'
-draft = true
+draft = false
 title = 'pass(word) management'
 description = "my journey into using a password manager"
 tags = [ "Journalistic Writing", "tools" ]
