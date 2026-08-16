@@ -3,7 +3,7 @@ locale = 'en-us'
 title = '''Şükrü Eren Gökırmak'''
 theme = 'PaperMod'
 copyright = "şükrü eren gökırmak · [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-outputs = { home = ["HTML", "JSON"] }
+outputs = { home = ["HTML", "JSON", "RSS"] }
 
 [taxonomies]
 tag = "tags"
@@ -20,6 +20,7 @@ homeInfoParams = { title = 'welcome!', content = 'I write and code and everythin
 ShowCodeCopyButtons = true
 ShowBreadCrumbs = true
 ShowRssButtonInSectionTermList = true
+ShowFullTextinRSS = true
 ShowReadingTime = true
 assets.disableHLJS = true
 
