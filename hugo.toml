@@ -66,6 +66,9 @@ url = '/Sukru_Eren_Gokirmak_CV.pdf'
 name = 'pgpkey'
 url = '/pub.asc'
 
+[[params.socialIcons]]
+name = 'rss'
+url = 'index.xml'
 
 [[menu.main]]
 name = 'Tags'
