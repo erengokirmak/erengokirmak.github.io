@@ -16,7 +16,7 @@ minifyOutput = true
 [params]
 description = 'Personal blog of Şükrü Eren Gökırmak'
 author = 'Şükrü Eren Gökırmak'
-homeInfoParams = { title = 'welcome!', content = "I'm Eren. I write and code and everything in-between. this is where to find them."}
+homeInfoParams = { title = 'welcome!', content = "I'm **Eren**, a **MSc in Computer Engineering** student at Bilkent University focusing on **Applied Cryptography**. I **write** and **code** and everything in-between. This is where to find them."}
 ShowCodeCopyButtons = true
 ShowBreadCrumbs = true
 ShowRssButtonInSectionTermList = true
@@ -39,35 +39,35 @@ name = "Posts"
 url = "/posts/"
 
 [[params.socialIcons]]
-name = 'github'
+name = 'GitHub'
 url = 'https://github.com/erengokirmak'
 
 [[params.socialIcons]]
-name = 'linkedin'
+name = 'LinkedIn'
 url = 'https://linkedin.com/in/sukruerengokirmak'
 
 [[params.socialIcons]]
-name = 'orcid'
+name = 'ORCID'
 url = 'https://orcid.org/0009-0003-2128-7872'
 
 [[params.socialIcons]]
-name = 'researchgate'
+name = 'ResearchGate'
 url = 'https://www.researchgate.net/profile/Suekrue-Goekirmak'
 
 [[params.socialIcons]]
-name = 'email'
+name = 'EMAIL'
 url = 'mailto:sukruerengokirmak@gmail.com'
 
 [[params.socialIcons]]
-name = 'cv'
+name = 'CV'
 url = '/Sukru_Eren_Gokirmak_CV.pdf'
 
 [[params.socialIcons]]
-name = 'pgpkey'
+name = 'PGPKEY'
 url = '/pub.asc'
 
 [[params.socialIcons]]
-name = 'rss'
+name = 'RSS'
 url = 'index.xml'
 
 [[menu.main]]
