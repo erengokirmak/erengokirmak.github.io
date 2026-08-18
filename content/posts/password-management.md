@@ -31,11 +31,17 @@ The key you get is a full-fledged OpenPGP key, which is a general purpose key. A
 pass init "<your_key_id>"
 ```
 
-This command does two things:
-1. It creates a `~/.password-store` directory to store your encrypted passwords,
-2. It creates a random key to use in symmetric encryption of your passwords, encrypts it with your public key, and stores the encrypted version in the same directory.
+This command creates a `~/.password-store` directory to store your encrypted password and writes a file `.gpg-id` to associate the store with the key ID you provide.
 
-The implication of this is that every time you want to use your passwords, `pass` takes the private key you have on your machine, uses it to decrypt the commonly used symmetric key, and decrypts the password you want to use. To me, this is a genius way to use public-key cryptography to manage a system like this. Another upside of this system is that you can freely carry your password store in any format. As long as you protect your private key, the password store is useless to a malicious attacker (assuming the cryptographic scheme is secure, obviously).
+## Encrypting Passwords
+
+Each time you want to encrypt a password, `pass` uses the standard OpenPGP encryption protocol:
+1. Generate a random one-time session key,
+2. Encrypt the data with AES-256 using the session key,
+3. Encrypt the session key with the public key of the GPG encryption subkey,
+4. Bundle all the encrypted information, along with metadata about the encryption, in a `.gpg` file.
+
+The implication is that every time you want to use your passwords, `pass` takes the private encryption subkey you have on your machine, uses it to decrypt the session key, and decrypts the password you want to use. To me, this is a genius way to use public-key cryptography to manage a system like this. Another upside of this system is that you can freely carry your password store. As long as you protect your private key, the password store is useless to a malicious attacker (assuming the cryptographic scheme is secure, obviously).
 
 ## Adding `git`
 `pass` allows for git integration. You can create a repository using `pass git init`. In fact, virtually all `git` commands have their `pass git` counterparts. However, other than pulling or pushing your repo, you may not need to use these commands as each change to the password store through `pass` automatically gets committed.
@@ -74,4 +80,4 @@ One concern I had with using `pass` was whether there was an easy way to share p
 pass show --qrcode "<domain.com>"
 ```
 
-which displays a QR code of the password.
+which displays a QR code of the password. Additionally, tools like [Android-Password-Store](https://github.com/agrahn/Android-Password-Store) allow you to use the same password store on your Android devices. I have yet to configure the store in my Windows machine, however I haven't needed to either. I guess logging into Google is good enough for that side.
